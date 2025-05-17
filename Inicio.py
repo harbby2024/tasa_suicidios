@@ -123,7 +123,7 @@ col1, col2 = st.columns([1, 2])
 
 # Columna izquierda: Foto del estudiante
 with col1:
-    st.image("assets/rata_con_liston.jpg", width=200, caption="Foto del estudiante", output_format="JPEG")
+    st.image("assets/rata_con_liston.jpg", width=200, caption="Foto del grupo de estudiantes")
 
 # Columna derecha: Información del estudiante
 with col2:
