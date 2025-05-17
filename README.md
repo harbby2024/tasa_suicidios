@@ -1,18 +1,35 @@
-# Aplicación Streamlit - Nuevas Tecnologías de Programación
+# 📊 Análisis de la Tasa de Suicidios en Antioquia
 
-Este proyecto es una aplicación web desarrollada con Streamlit que permite visualizar y completar las actividades y evaluaciones del curso de Nuevas Tecnologías de Programación del programa de Desarrollo de Software.
+Este proyecto es una aplicación interactiva construida con **Streamlit** para visualizar, analizar y explorar datos relacionados con los casos de suicidio reportados en el departamento de **Antioquia, Colombia**, a lo largo de varios años.
 
-## Características
+La app permite a los usuarios aplicar filtros por municipio, región, años y número de casos, y ofrece visualizaciones claras, como gráficos de barras, líneas y tablas con variaciones interanuales.
 
-- Interfaz de usuario intuitiva y responsive
-- Múltiples páginas organizadas por momentos y actividades
-- Estructura de proyecto organizada y mantenible
-- Secciones específicas para cada actividad y evaluación
+---
 
-## Requisitos previos
+## 🚀 Funcionalidades principales
 
-- Python 3.8 o superior
-- pip (gestor de paquetes de Python)
+- 📅 Filtro por rango de **años**
+- 🏙️ Filtro por **municipios** y **regiones**
+- 🔢 Filtro por rango de **número de casos**
+- 📈 Gráfico de barras por municipio
+- 📉 Gráfico de variación interanual (%)
+- 📊 Gráfico de evolución de casos por municipio
+- 🧮 Tabla interactiva con número de casos y variación año a año
+
+---
+
+## 🛠️ Tecnologías y dependencias
+
+Este proyecto fue desarrollado usando:
+
+- [Python 3.8+](https://www.python.org/)
+- [Streamlit](https://streamlit.io/) - para crear la interfaz web interactiva
+- [Pandas](https://pandas.pydata.org/) - para el análisis y manipulación de datos
+- [Plotly Express](https://plotly.com/python/plotly-express/) - para gráficos interactivos
+- [openpyxl](https://openpyxl.readthedocs.io/en/stable/) - para leer archivos Excel `.xls` o `.xlsx`
+
+Consulta el archivo `requirements.txt` para ver la lista completa de dependencias.
+
 
 ## Instalación
 
@@ -58,18 +75,7 @@ La aplicación estará disponible en tu navegador en `http://localhost:8501`.
 │   └── logo-Cesde-2023.svg # Logo de CESDE
 ├── data/                  # Carpeta para almacenar datos
 ├── pages/                 # Páginas de la aplicación
-│   ├── 1_📌_M2 Actvidad 1.py   # Actividad 1 del Momento 2
-│   ├── 2_📌_M2 Actvidad 2.py   # Actividad 2 del Momento 2
-│   ├── 3_📌_M2 Actvidad 3.py   # Actividad 3 del Momento 2
-│   ├── 4_📌_M2 Actvidad 4.py   # Actividad 4 del Momento 2
-│   ├── 5_📌_M2 Actvidad 5.py   # Actividad 5 del Momento 2
-│   ├── 6_📋_M2 Evaluación.py   # Evaluación del Momento 2
-│   ├── 7_📌_M3 Actvidad 1.py   # Actividad 1 del Momento 3
-│   ├── 8_📌_M3 Actvidad 2.py   # Actividad 2 del Momento 3
-│   ├── 9_📌_M3 Actvidad 3.py   # Actividad 3 del Momento 3
-│   ├── 10_📌_M3 Actvidad 4.py  # Actividad 4 del Momento 3
-│   ├── 11_📌_M3 Actvidad 5.py  # Actividad 5 del Momento 3
-│   └── 12_📋_M3 Evaluación.py  # Evaluación del Momento 3
+│   ├── Analisis.py        # Página de análisis de datos
 ├── .gitignore             # Archivos ignorados por Git
 ├── Inicio.py              # Punto de entrada de la aplicación
 ├── README.md              # Este archivo
@@ -78,48 +84,16 @@ La aplicación estará disponible en tu navegador en `http://localhost:8501`.
 
 ## Navegación por la aplicación
 
-1. **Página de inicio (Inicio.py)**: Muestra información general del estudiante y del curso.
+1. **Página de inicio (Inicio.py)**: Muestra información general del grupo de estudiantes y del curso.
 
-2. **Actividades del Momento 2**: Páginas numeradas del 1 al 5, cada una contiene una actividad específica del Momento 2.
+2. **Pagina de análisis de datos (Analisis.py)**: Muestra gráficos y tablas para analizar los datos de casos de suicidio en Antioquia entre el año 2005 y 2022.
 
-3. **Evaluación del Momento 2**: Página 6, contiene la evaluación final del Momento 2.
-
-4. **Actividades del Momento 3**: Páginas numeradas del 7 al 11, cada una contiene una actividad específica del Momento 3.
-
-5. **Evaluación del Momento 3**: Página 12, contiene la evaluación final del Momento 3.
-
-## Personalización
-
-### Información del estudiante
-
-Para personalizar la información del estudiante, edita el archivo `Inicio.py` y modifica los siguientes elementos:
-
-1. Reemplaza la imagen `assets/foto.jpg` con tu propia foto.
-2. Actualiza la información personal (nombre, programa, semestre, enlace al repositorio).
-
-### Completar actividades
+### Breve explicacion del funcionamiento de la aplicación
 
 Para completar cada actividad o evaluación:
 
-1. Navega a la página correspondiente desde la barra lateral.
-2. Lee la descripción y objetivos de la actividad.
-3. Implementa tu solución en la sección designada.
-4. Guarda los cambios y actualiza la página para ver los resultados.
-
-## Dependencias principales
-
-- streamlit: Framework para crear aplicaciones web interactivas
-- pandas: Manipulación y análisis de datos
-- numpy: Computación numérica
-- matplotlib y seaborn: Visualización de datos
-- plotly: Gráficos interactivos
-
-Consulta el archivo `requirements.txt` para ver la lista completa de dependencias.
-
-## Consejos para el desarrollo
-
-- Utiliza la función `st.help()` para obtener ayuda sobre cualquier función de Streamlit.
-- Consulta la [documentación oficial de Streamlit](https://docs.streamlit.io/) para más información.
-- Utiliza `st.write()` para depurar variables durante el desarrollo.
-- Aprovecha los widgets interactivos de Streamlit para hacer tus actividades más dinámicas.
-
+1. Selecciona la casilla de "Mostrar datos completos" para obtener los datos completos de los casos de suicidio. 
+2. A continuacion, en el lateral izquierdo selecciona el año u años de referencia utlizando el slider.
+3. Selecciona el municipio o zona de tu interés utilizando el sidebar, que te permitira seleccionar varias zonas.
+4. Utiliza el slider para seleccionar el numero de casos de suicidio, esto filtrara los datos por el número de casos correspondiente a las zonas seleccionadas.
+5. Puedes escribir un numero en el campo de "Escribe un número para mostrar los municipios con mayor  cantidad de casos" para mostrar los municipios ordenados por cantidad de casos de mayor a menor. Esto modificara todos los graficos y tablas, permitiendo visualizar los datos de manera más clara.
