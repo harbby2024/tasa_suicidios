@@ -37,8 +37,8 @@ min_casos = int(df["NumeroCasos"].min())
 max_casos = int(df["NumeroCasos"].max())
 rango_casos = st.sidebar.slider("Número de casos", min_casos, max_casos, (min_casos, max_casos))
 
-# Filtro opcional: Top N municipios
-top_n = st.sidebar.number_input("Escribe un número para mostrar los municipios con más casos", min_value=0, max_value=100, value=0)
+# Filtro opcional: Municipios con mayor número de casos
+top_n = st.sidebar.number_input("Escribe un número para mostrar los municipios con mayor  cantidad de casos", min_value=0, max_value=100, value=0)
 
 # Aplicar filtros
 df_filtrado = df[
@@ -89,15 +89,18 @@ df_interanual["Variacion"] = df_interanual.groupby("NombreMunicipio")["NumeroCas
 # Redondear variación
 df_interanual["Variacion"] = df_interanual["Variacion"].round(2)
 
-# Mostrar tabla
 # Crear una copia del DataFrame para mostrar valores formateados
 df_mostrar = df_interanual[["NombreMunicipio", "Año", "NumeroCasos", "Variacion"]].copy()
+
+# Reemplazar valores infinitos por NaN o por un símbolo personalizado
+df_mostrar["Variacion"].replace([float("inf"), float("-inf")], pd.NA, inplace=True)
 
 # Formatear la columna Variacion como porcentaje con símbolo %
 df_mostrar["Variacion"] = df_mostrar["Variacion"].apply(lambda x: f"{x:.2f}%" if pd.notnull(x) else "—")
 
 # Mostrar la tabla formateada
 st.dataframe(df_mostrar, use_container_width=True)
+
 
 
 st.subheader("📊 Evolución Temporal de Casos")
@@ -114,6 +117,8 @@ fig_line = px.line(
 )
 
 st.plotly_chart(fig_line)
+
+
 
 
 

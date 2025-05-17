@@ -94,6 +94,7 @@ Para completar cada actividad o evaluación:
 
 1. Selecciona la casilla de "Mostrar datos completos" para obtener los datos completos de los casos de suicidio. 
 2. A continuacion, en el lateral izquierdo selecciona el año u años de referencia utlizando el slider.
-3. Selecciona el municipio o zona de tu interés utilizando el sidebar, que te permitira seleccionar varias zonas.
+3. Selecciona el municipio o zona de tu interés utilizando el multiselect, que te permitira seleccionar varias zonas.
 4. Utiliza el slider para seleccionar el numero de casos de suicidio, esto filtrara los datos por el número de casos correspondiente a las zonas seleccionadas.
 5. Puedes escribir un numero en el campo de "Escribe un número para mostrar los municipios con mayor  cantidad de casos" para mostrar los municipios ordenados por cantidad de casos de mayor a menor. Esto modificara todos los graficos y tablas, permitiendo visualizar los datos de manera más clara.
+
