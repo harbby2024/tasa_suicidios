@@ -3,9 +3,11 @@ attrs==25.3.0
 blinker==1.9.0
 cachetools==5.5.2
 certifi==2025.1.31
+chardet==5.2.0
 charset-normalizer==3.4.1
 click==8.1.8
 colorama==0.4.6
+geopandas==1.0.1
 gitdb==4.0.12
 GitPython==3.1.44
 idna==3.10
@@ -22,11 +24,16 @@ plotly==6.0.1
 protobuf==5.29.4
 pyarrow==19.0.1
 pydeck==0.9.1
+pyogrio==0.11.0
+pyproj==3.7.1
 python-dateutil==2.9.0.post0
 pytz==2025.2
 referencing==0.36.2
+reportlab==4.4.1
 requests==2.32.3
 rpds-py==0.24.0
+scipy==1.15.3
+shapely==2.1.1
 six==1.17.0
 smmap==5.0.2
 streamlit==1.44.0
@@ -38,3 +45,4 @@ tzdata==2025.2
 urllib3==2.3.0
 watchdog==6.0.0
 xlrd==2.0.1
+XlsxWriter==3.2.3
