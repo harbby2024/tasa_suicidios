@@ -136,6 +136,30 @@ with col2:
     st.markdown('<p>Repositorio: <a href="https://github.com/mari4l3/tasa_suicidios" target="_blank" style="color: #0066cc; font-weight: bold; text-decoration: none;">GitHub</a></p>', unsafe_allow_html=True)
     st.markdown('<p>Streamlit: <a href="https://tasasuicidios.streamlit.app/" target="_blank" style="color: #0066cc; font-weight: bold; text-decoration: none;">Streamlit</a></p>', unsafe_allow_html=True)
    
+
+with st.expander("ℹ️ Acerca del Proyecto", expanded=True):
+    st.markdown("""
+    ### 🎯 Objetivo General
+    Este panel interactivo tiene como propósito analizar y visualizar la evolución de los casos reportados de suicidio en los municipios del departamento de **Antioquia**, Colombia, desde el año **2005** hasta **2022**.
+
+    ---
+    ### 🧭 Acercamiento Metodológico
+    - Se trabajó con una base de datos histórica suministrada en formato Excel, organizada por año, municipio y número de casos reportados.
+    - Se normalizaron y filtraron los datos para asegurar la coherencia en los nombres de municipios y años.
+    - Se crearon visualizaciones interactivas que permiten a los usuarios explorar **tendencias temporales**, **comparaciones por regiones**, y **diferencias frente al promedio histórico**.
+
+    ---
+    ### ✅ Propósito del Panel
+    Este panel busca:
+    - Facilitar la **exploración visual** de los datos para instituciones, investigadores o ciudadanos interesados.
+    - Ofrecer una herramienta que permita identificar posibles patrones o alertas en el comportamiento del fenómeno del suicidio.
+    - Promover una base de análisis para estrategias de **intervención, prevención y concientización** en salud mental pública.
+
+    ---
+    **Nota:** Los datos utilizados provienen de fuentes oficiales y fueron tratados con fines exclusivamente analíticos y de visualización. Este proyecto no busca emitir juicios, sino contribuir al entendimiento del fenómeno.
+    """)
+
+
 # Pie de página
 st.markdown("---")
 st.markdown("""

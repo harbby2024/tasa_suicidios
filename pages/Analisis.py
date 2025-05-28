@@ -118,6 +118,40 @@ fig_line = px.line(
 
 st.plotly_chart(fig_line)
 
+st.subheader("🧾 Resumen General de Datos Filtrados")
+
+if df_filtrado.empty:
+    st.info("No hay datos disponibles para mostrar un resumen con los filtros aplicados.")
+else:
+    total_casos = df_filtrado["NumeroCasos"].sum()
+    total_municipios = df_filtrado["NombreMunicipio"].nunique()
+    años_analizados = df_filtrado["Año"].nunique()
+    año_inicio = df_filtrado["Año"].min()
+    año_fin = df_filtrado["Año"].max()
+
+    resumen_agrupado = df_filtrado.groupby("NombreMunicipio")["NumeroCasos"].sum().reset_index()
+    municipio_max = resumen_agrupado.loc[resumen_agrupado["NumeroCasos"].idxmax()]
+    municipio_min = resumen_agrupado.loc[resumen_agrupado["NumeroCasos"].idxmin()]
+    promedio_municipio = resumen_agrupado["NumeroCasos"].mean()
+
+    col1, col2 = st.columns(2)
+    with col1:
+        st.metric("🔢 Total de casos reportados", f"{int(total_casos):,}")
+        st.metric("🏘️ Municipios analizados", total_municipios)
+        st.metric("📅 Años cubiertos", f"{año_inicio} - {año_fin} ({años_analizados} años)")
+
+    with col2:
+        st.metric("📈 Municipio con más casos", f"{municipio_max['NombreMunicipio']} ({int(municipio_max['NumeroCasos'])} casos)")
+        st.metric("📉 Municipio con menos casos", f"{municipio_min['NombreMunicipio']} ({int(municipio_min['NumeroCasos'])} casos)")
+        st.metric("📊 Promedio por municipio", f"{promedio_municipio:.2f} casos")
+
+    # Variación media si hay solo un municipio
+    municipios_unicos = df_interanual["NombreMunicipio"].nunique()
+    if municipios_unicos == 1:
+        variacion_media = df_interanual["Variacion"].dropna().mean()
+        st.info(f"📈 La variación media interanual para **{df_interanual['NombreMunicipio'].iloc[0]}** fue de **{variacion_media:.2f}%**.")
+
+
 
 
 
