@@ -137,7 +137,7 @@ with col2:
     st.markdown('<p>Semestre: <span style="color: #0066cc; font-weight: bold;">2025-1</span></p>', unsafe_allow_html=True)
     st.markdown('<p>Repositorio: <a href="https://github.com/mari4l3/tasa_suicidios" target="_blank" style="color: #0066cc; font-weight: bold; text-decoration: none;">GitHub</a></p>', unsafe_allow_html=True)
     st.markdown('<p>Streamlit: <a href="https://tasasuicidios.streamlit.app/" target="_blank" style="color: #0066cc; font-weight: bold; text-decoration: none;">Streamlit</a></p>', unsafe_allow_html=True)
-
+    st.markdown('<p>Streamlit AI: <a href="https://geminicine-jw3gybrspxdta8gyy9cnoh.streamlit.app/" target="_blank" style="color: #0066cc; font-weight: bold; text-decoration: none;">AI generativa</a></p>', unsafe_allow_html=True)  
 # Sección del proyecto
 with st.expander("ℹ️ Acerca del Proyecto", expanded=True):
     st.markdown("""
