@@ -1,5 +1,6 @@
 import streamlit as st
 import base64
+import os
 
 # Configuración de la página
 st.set_page_config(
@@ -52,7 +53,6 @@ st.markdown("""
 def get_svg_logo():
     with open("assets/logo-Cesde-2023.svg", "r") as file:
         svg_content = file.read()
-    # Ajustar el tamaño del SVG
     svg_content = svg_content.replace('viewBox="0 0 264 53"', 'viewBox="0 0 264 53" width="300"')
     return svg_content
 
@@ -63,7 +63,7 @@ st.markdown(f"<div style='text-align: center; margin-bottom: 20px;'>{get_svg_log
 st.markdown('<h1 class="main-header">Nuevas Tecnologías de Programación</h1>', unsafe_allow_html=True)
 st.markdown('<h2 class="sub-header">Programa de Desarrollo de Software</h2>', unsafe_allow_html=True)
 
-# Agregar estilos adicionales para la sección del estudiante
+# Estilos para la sección del estudiante
 st.markdown('''
 <style>
     .student-container {
@@ -93,12 +93,10 @@ st.markdown('''
         font-weight: bold;
         margin-bottom: 15px;
     }
-    /* Ajustes para la imagen */
     .student-image img {
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    /* Ajustes para el contenedor de columnas */
     .student-row {
         display: flex;
         flex-direction: row;
@@ -121,11 +119,15 @@ st.markdown('''
 # Sección de información del estudiante con diseño de dos columnas
 col1, col2 = st.columns([1, 2])
 
-# Columna izquierda: Foto del estudiante
+# Columna izquierda: Foto del estudiante (con verificación)
+image_path = "assets/img-grupo.png"
 with col1:
-    st.image("asset/img-grupo.png", width=200, caption="Foto del grupo de estudiantes")
+    if os.path.exists(image_path):
+        st.image(image_path, width=200, caption="Foto del grupo de estudiantes")
+    else:
+        st.warning(f"No se encontró la imagen en `{image_path}`")
 
-# Columna derecha: Información del estudiante
+# Columna derecha: Información de los estudiantes
 with col2:
     st.markdown('<h3 style="color: #0066cc; margin-top: 5px;">Alejandra Suarez</h3>', unsafe_allow_html=True)
     st.markdown('<h3 style="color: #0066cc; margin-top: 5px;">Andres Tobon</h3>', unsafe_allow_html=True)
@@ -135,8 +137,8 @@ with col2:
     st.markdown('<p>Semestre: <span style="color: #0066cc; font-weight: bold;">2025-1</span></p>', unsafe_allow_html=True)
     st.markdown('<p>Repositorio: <a href="https://github.com/mari4l3/tasa_suicidios" target="_blank" style="color: #0066cc; font-weight: bold; text-decoration: none;">GitHub</a></p>', unsafe_allow_html=True)
     st.markdown('<p>Streamlit: <a href="https://tasasuicidios.streamlit.app/" target="_blank" style="color: #0066cc; font-weight: bold; text-decoration: none;">Streamlit</a></p>', unsafe_allow_html=True)
-   
 
+# Sección del proyecto
 with st.expander("ℹ️ Acerca del Proyecto", expanded=True):
     st.markdown("""
     ### 🎯 Objetivo General
@@ -158,7 +160,6 @@ with st.expander("ℹ️ Acerca del Proyecto", expanded=True):
     ---
     **Nota:** Los datos utilizados provienen de fuentes oficiales y fueron tratados con fines exclusivamente analíticos y de visualización. Este proyecto no busca emitir juicios, sino contribuir al entendimiento del fenómeno.
     """)
-
 
 # Pie de página
 st.markdown("---")
