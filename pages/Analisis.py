@@ -117,6 +117,24 @@ fig_line = px.line(
 )
 
 st.plotly_chart(fig_line)
+#Visualizar codigo de grafico
+with st.expander("📜 Ver código del gráfico"):
+    st.code("""
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+fig_line = px.line(
+    df_interanual,
+    x="Año",
+    y="NumeroCasos",
+    color="NombreMunicipio",
+    markers=True,
+    title="Evolución de Casos por Municipio",
+    labels={"NumeroCasos": "Número de Casos"},
+    height=500
+)
+st.plotly_chart(fig_line)
+    """, language="python")
 
 st.subheader("🧾 Resumen General de Datos Filtrados")
 
