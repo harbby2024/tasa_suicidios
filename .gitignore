@@ -1,5 +1,0 @@
-# Entornos virtuales
-.env
-
-# Archivos de configuración local
-.streamlit/secrets.toml
