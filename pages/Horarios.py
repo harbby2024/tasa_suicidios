@@ -12,6 +12,8 @@ API_ENDPOINTS = {
     "estudiantes": "https://horariosnuevo.onrender.com/api/estudiantes",
     "clases": "https://horariosnuevo.onrender.com/api/clases",
     "profesores": "https://horariosnuevo.onrender.com/api/profesores"
+    "horarios": "https://horariosnuevo.onrender.com/api/horarios"
+
 }
 
 @st.cache_data(ttl=300)  # Cache de 5 minutos
@@ -30,12 +32,13 @@ with st.spinner("Cargando datos académicos..."):
     estudiantes_df = cargar_datos("estudiantes")
     clases_df = cargar_datos("clases")
     profesores_df = cargar_datos("profesores")
+    horarios_df = cargar_datos("horarios")
 
 # Sidebar con selección de tabla principal
 st.sidebar.header("🔍 Filtros Principales")
 tabla_seleccionada = st.sidebar.selectbox(
     "Seleccionar tabla para visualizar",
-    options=["Estudiantes", "Clases", "Profesores"],
+    options=["Estudiantes", "Clases", "Profesores","horarios" ],
     index=0
 )
 
