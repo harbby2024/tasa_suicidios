@@ -11,8 +11,8 @@ st.title("🏫 Sistema de Gestión Académica")
 API_ENDPOINTS = {
     "estudiantes": "https://horariosnuevo.onrender.com/api/estudiantes",
     "clases": "https://horariosnuevo.onrender.com/api/clases",
-    "profesores": "https://horariosnuevo.onrender.com/api/profesores"
-    "horarios": "https://horariosnuevo.onrender.com/api/horarios"
+    "profesores": "https://horariosnuevo.onrender.com/api/profesores",
+    "horarios": "https://horariosnuevo.onrender.com/api/horarios",
 
 }
 
