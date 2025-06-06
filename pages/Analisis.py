@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import ploty.express as px
+import plotly.express as px
 
 st.title("Tasa de Suicidios en Antioquia")
 
