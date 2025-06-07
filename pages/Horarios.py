@@ -26,6 +26,25 @@ def cargar_datos(tipo):
     except Exception as e:
         st.error(f"Error al cargar {tipo}: {str(e)}")
         return pd.DataFrame()
+    
+    # Mostrar el código de la función cargar_datos si el usuario lo desea
+with st.expander("📄 Ver código de la función cargar_datos", expanded=False):
+    if st.button("Mostrar código fuente"):
+        st.code('''import streamlit as st
+import requests
+import pandas as pd
+from datetime import datetime
+@st.cache_data(ttl=300)  # Cache de 5 minutos
+def cargar_datos(tipo):
+    try:
+        response = requests.get(API_ENDPOINTS[tipo], timeout=30)
+        response.raise_for_status()
+        data = response.json()
+        return pd.DataFrame(data)
+    except Exception as e:
+        st.error(f"Error al cargar {tipo}: {str(e)}")
+        return pd.DataFrame()''', language='python')
+
 
 # Cargar todos los datos
 with st.spinner("Cargando datos académicos..."):
